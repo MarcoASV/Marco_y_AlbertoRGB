@@ -1,0 +1,45 @@
+from gpiozero import LED
+from time import sleep
+Led_rojo = LED(14)
+Led_azul = LED(15)
+Led_verde = LED(18)
+
+Led_rojo.on()
+Led_azul.on()
+Led_verde.on()
+
+while(True):
+    #ingreso del dato para elegir el color
+    a = input("ingresa un color: ")
+     #si el dato ingresado es rojo, se prende el led de color rojo
+    if (a == "rojo"):
+        Led_rojo.off()
+        Led_azul.on()
+        Led_verde.on()
+        print('Rojo')
+        sleep(3)
+     
+    elif (a == "azul"):
+         Led_rojo.on()
+         Led_azul.off() 
+         Led_verde.on()
+
+    elif (a == "verde"):
+         Led_rojo.on()
+         Led_azul.on() 
+         Led_verde.off()
+     
+    elif (a == "morado"):
+         Led_rojo.off()
+         Led_azul.off() 
+         Led_verde.on()
+     
+    elif (a == "azul-verde"):
+         Led_rojo.on()
+         Led_azul.off() 
+         Led_verde.off() 
+
+    else:
+         Led_rojo.on()
+         Led_azul.on()
+         Led_verde.on() 
